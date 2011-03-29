@@ -1,0 +1,32 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="winBranchInput" border="none" apply="com.mycrud.controller.master.BranchController" width="100%">
+	<separator/>
+		<groupbox mold="3d" closable="false">
+			<caption label="${c:l('branch.label')}" />
+			<grid fixedLayout="true">
+				<columns>
+					<column label="" width="200px" />
+					<column label="" width="" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Branch Code" />
+						<textbox id="txtBranchCode" constraint="no empty"/>
+					</row>
+					<row>
+						<label value="Branch Name" />
+						<textbox id="txtBranchName" constraint="no empty"/>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div align="center">
+			<button label="Submit" id="btnSubmit" />
+			<button label="Cancel" id="btnCancel" />
+		</div>
+	</window>
+</zk>

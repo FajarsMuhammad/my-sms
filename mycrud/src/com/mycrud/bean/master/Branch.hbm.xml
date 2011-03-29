@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.mycrud.bean.master">
+	<class name="Branch" table="branch" lazy="false">
+		<id name="id" column="branch_code" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="branchName" column="branch_name" type="string" />
+	</class>
+</hibernate-mapping>

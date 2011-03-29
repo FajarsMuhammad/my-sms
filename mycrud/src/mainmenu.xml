@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:XMLRootMenu xmlns:ns2="http://www.daibutsu.de/zk/menu">
+
+	<!-- Old HomeMenuTree -->
+	<menuItem id="menu.home" zulNavigation="/WEB-INF/zul/welcome.zul"/>
+	
+
+	<!-- Old Menu Master -->
+	<menu id="menu.master" rightName="menuCat_Master">
+		<menuItem id="menu.item.master.branch" zulNavigation="/WEB-INF/zul/branch/branchInput.zul"
+			rightName="menuItem_Master_Branch" />
+	</menu>
+
+</ns2:XMLRootMenu>
