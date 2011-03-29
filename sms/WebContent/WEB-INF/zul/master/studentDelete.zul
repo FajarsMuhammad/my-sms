@@ -1,0 +1,43 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<window id="winStudentDelete" title="Delete Student" border="normal"
+		apply="com.sms.controller.master.student.StudentDeleteController">
+		<div style="padding:5px">
+			<grid fixedLayout="true">
+				<columns>
+					<column label="" width="200px" />
+					<column label="" width="" />
+				</columns>
+				<rows>
+					<row>
+						<label value="NIS" />
+						<div>
+							<textbox id="txtId" value="${arg.studentId}"
+								visible="false" />
+							<textbox id="txtNis" constraint="no empty"
+								value="${arg.studentNis}" />
+						</div>
+					</row>
+					<row>
+						<label value="Name" />
+						<textbox id="txtName" constraint="no empty"
+							value="${arg.studentName}" />
+					</row>
+					<row>
+						<label value="Address" />
+						<textbox id="txtAddress" cols="30" rows="3"
+							value="${arg.studentAddress}" />
+					</row>
+				</rows>
+			</grid>
+			<div>
+				<button id="btnSubmit" label="Delete" />
+				<button id="btnCancel" label="Cancel" />
+			</div>
+		</div>
+	</window>
+</zk>

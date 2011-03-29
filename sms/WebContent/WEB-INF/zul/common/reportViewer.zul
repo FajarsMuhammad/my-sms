@@ -1,0 +1,8 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+
+<zk xmlns:w="http://www.zkoss.org/2005/zk/client">
+
+	<window id="winReportViewer" title="View report">
+		
+	</window>
+</zk>

@@ -1,0 +1,28 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<window id="winInbox" apply="com.sms.controller.master.InboxController">
+		<borderlayout height="420px">
+			<north maxsize="300" size="50%"
+				splittable="true" collapsible="true">
+				<div>
+				<listbox id="listBoxInbox">
+					<listhead sizable="true">
+						<listheader id="inboxGroupFlag" label="Flag" width="35px"/>
+						<listheader id="inboxGroupHeader" label="${c:l('lbl.inbox.group')}" sort="auto" />
+						<listheader id="inboxDestinationHeader" label="${c:l('lbl.inbox.destination')}" sort="auto" />
+						<listheader id="inboxSubjectHeader" label="${c:l('lbl.inbox.subject')}" sort="auto"/>
+					</listhead>
+				</listbox>
+				<paging id="paging"/>
+				</div>
+			</north>
+			<center id="center" border="none">
+				<textbox id="txtInbox" cols="300" rows="50"/>	
+			</center>
+		</borderlayout>
+	</window>
+</zk>

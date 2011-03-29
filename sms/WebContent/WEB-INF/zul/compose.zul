@@ -1,0 +1,43 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<window id="winCompose" title="Compose Message" border="normal">
+		<div style="padding:5px">
+			<div>
+				<button id="btnSendTop" label="Send" />
+			</div>
+			<grid fixedLayout="true">
+				<columns>
+					<column label="" width="100px" />
+					<column label="" width="" />
+				</columns>
+				<rows>
+					<row>
+						<label value="To" />
+						<textbox id="txtTo" cols="50"
+							constraint="no empty" />
+					</row>
+					<row spans="2" style="background-color:white">
+						<div>
+							<separator />
+							<textbox cols="150" rows="5"
+								maxlength="160" />
+						</div>
+					</row>
+					<row spans="2">
+						<div>
+							<label value="Sisa Karakter : " />
+							<label id="lblMessage" value="160" />
+						</div>
+					</row>
+				</rows>
+			</grid>
+			<div>
+				<button id="btnSendBottom" label="Send" />
+			</div>
+		</div>
+	</window>
+</zk>

@@ -1,0 +1,49 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<window id="winStudentList" title="Search Student" border="normal"
+		apply="com.sms.controller.master.student.StudentListController">
+		<div style="padding:10px">
+		<grid fixedLayout="true" >
+			<columns>
+				<column label="" width="100px" />
+				<column label="" width="" />
+			</columns>
+			<rows style="background:white">
+				<row>
+					<label value="Search" />
+					<div>
+						<listbox id="cmbSearchColumn" mold="select">
+							<listitem value=""
+								label="${c:l('lbl.common.pleaseSelect')}">
+							</listitem>
+						</listbox>
+						<textbox id="txtSearchValue" />
+						<button id="btnSearch" label="Search" />
+					</div>
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<div id="divSearchResult">
+			<listbox id="lsSearchResult">
+				<listhead sizable="true">
+					<listheader label="${c:l('lbl.student.nis')}" sort="auto" />
+					<listheader label="${c:l('lbl.student.name')}" sort="auto" />
+					<listheader label="${c:l('lbl.student.address')}" sort="auto" />
+					<listheader label="${c:l('lbl.common.action')}" />
+				</listhead>
+			</listbox>
+			<paging id="paging" />
+		</div>
+		<separator />
+		<div>
+			<button id="btnAdd" label="Add" />
+			<button id="btnPrint" label="Print" />
+		</div>
+		</div>
+	</window>
+</zk>
