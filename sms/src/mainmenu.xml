@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:XMLRootMenu xmlns:ns2="http://www.daibutsu.de/zk/menu">
+
+	<!-- Old Menu Master -->
+	<menu id="menu.root" rightName="menuRoot">
+		<menu id="menu.item.master" rightName="menuItemMaster">
+			<menuItem id="menu.item.master.student" zulNavigation="/WEB-INF/zul/master/studentList.zul" rightName="menuItemMasterStudent"/>
+		</menu>
+		<menu id="menu.item" rightName="menuItem">
+			<menuItem id="menu.item.compose" zulNavigation="/WEB-INF/zul/compose.zul"
+				rightName="menuItemCompose" />
+			<menuItem id="menu.item.inbox" zulNavigation="/WEB-INF/zul/inbox.zul"
+				rightName="menuItemInbox" />
+			<menuItem id="menu.item.server" zulNavigation="/WEB-INF/zul/server.zul"
+				rightName="menuItemServer" />
+		</menu>
+	</menu>
+
+</ns2:XMLRootMenu>

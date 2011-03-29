@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE hibernate-configuration PUBLIC
+     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+	 <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+   		<property name="show_sql">true</property>
+		
+		<!--
+		this for generate table
+		<property name="hibernate.hbm2ddl.auto">update</property>	    
+	    -->
+	    
+	    <!-- Master -->
+	    <mapping resource="com/sms/bean/master/Inbox.hbm.xml"/>
+       	<mapping resource="com/sms/bean/master/Student.hbm.xml"/>
+       	
+	 </session-factory>
+ </hibernate-configuration>

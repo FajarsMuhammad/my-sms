@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!-- Spring namespace-based configuration -->
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	       http://www.springframework.org/schema/aop   
+		   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd                        
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<!-- ====================================================== -->
+	<!--      For catching the @Secured annotation methods      -->
+	<!--                we use our own mechanism.               -->
+	<!--      Look in GFCBaseCtrl.java onEvent() method.        -->
+	<!-- ====================================================== -->
+
+	<!-- Enable the @Secured annotation to secure service layer methods -->
+	<global-method-security secured-annotations="enabled" />
+
+	<http auto-config="true">
+
+		<!-- ====================================================== -->
+		<!--       If we have our own LoginPage. So we must         -->
+		<!--         tell Spring the name and the place.            -->
+		<!--          In our case we take the same page             -->
+		<!--         for a error message by a failure.              -->
+		<!--      Further the page after a successfully login.      -->
+		<!-- ====================================================== -->
+		<form-login login-page="/loginDialog.zul"
+			authentication-failure-url="/loginDialog.zul?login_error=1"
+			default-target-url="/index.zul" />
+
+		<!-- ====================================================== -->
+		<!--        Tell Spring where it goes after logout.         -->
+		<!--              logout-url is a action url.               -->
+		<!-- ====================================================== -->
+		<logout logout-url="/j_spring_logout" logout-success-url="/loginDialog.zul" />
+
+		<!-- ====================================================== -->
+		<!--      Define the pages that are to be intercepted       -->
+		<!--       It is parsed from top to bottom. Means that      -->
+		<!--      the most specific pattern is standing on TOP      -->
+		<!--            and the CATCH ALL is on BOTTOM!             -->
+		<!-- ====================================================== -->
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_REMEMBERED" />
+		<intercept-url pattern="/WEB-INF/zul/**" access="IS_AUTHENTICATED_REMEMBERED" />
+
+		<!-- ====================================================== -->
+		<!--      The root page is accessible by everyone but       -->
+		<!--           internally spring makes a login and          -->
+		<!--            this user becames a UserDetails             -->
+		<!--       (in there are the ip-address and others)         -->
+		<!-- ====================================================== -->
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<session-management>
+			<concurrency-control max-sessions="1" />
+		</session-management>
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<!--<password-encoder hash="md5" />
+			--><user-service>
+				<user name="admin" password="admin"
+					authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+
+</beans:beans>
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sms.bean.master">
+	<class name="Inbox" table="inbox" lazy="false">
+		<id name="id" column="inbox_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="group" column="group" type="string" />
+		<property name="destination" column="destination" type="string" />
+		<property name="subject" column="subject" type="string" />
+		<property name="createdDate" column="created_date" type="timestamp" />
+		<property name="deleted" column="deleted" type="integer" />
+	</class>
+</hibernate-mapping>

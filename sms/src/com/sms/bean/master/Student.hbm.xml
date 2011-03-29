@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sms.bean.master">
+	<class name="Student" table="siswa" lazy="false">
+		<id name="id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="nis" column="nis" type="string" />
+		<property name="name" column="name" type="string" />
+		<property name="address" column="address" type="string" />
+		<property name="createdDate" column="created_date" type="timestamp" />
+		<property name="deleted" column="deleted" type="integer" />
+	</class>
+</hibernate-mapping>
